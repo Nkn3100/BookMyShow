@@ -10,14 +10,21 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class Show extends BaseModel{
+public class MovieShow extends BaseModel{
+
     @ManyToOne
     private Movie movie;
+
     private Date startTime;
     private Date endTime;
+
+    @OneToMany
     private List<ShowSeat> showSeats;
 
     @Enumerated(EnumType.ORDINAL)
     @ElementCollection
     private List<Feature> features;
+
+    @ManyToOne
+    private Screen screen;
 }

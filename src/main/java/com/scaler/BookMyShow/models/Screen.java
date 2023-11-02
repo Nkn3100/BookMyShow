@@ -10,12 +10,13 @@ import java.util.List;
 @Getter
 @Setter
 public class Screen extends BaseModel{
+
     private String name;
 
     @OneToMany
-    private List<Seat> seats;
+    private List<Seat> seat;
 
     @Enumerated(EnumType.ORDINAL)
-    @ElementCollection //mapping table for screen to feature
-    private List<Feature> features;
+    @ElementCollection // mapping table for screen to feature
+    private List<Feature> feature;
 }

@@ -1,9 +1,9 @@
 package com.scaler.BookMyShow.models;
 
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,11 +11,13 @@ import lombok.Setter;
 @Setter
 @Entity
 public class ShowSeat extends BaseModel{
-    private Show show;
+    @ManyToOne
+    private MovieShow movieShow;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.ORDINAL) // in one to many case along we need @ElementCollection
     private ShowSeatStatus showSeatStatus;
 
+    @ManyToOne
     private Seat seat;
     private double price;
 }

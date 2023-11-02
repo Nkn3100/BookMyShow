@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Payment extends BaseModel{
+    private int refNo;
     private int amount;
 
     @Enumerated(EnumType.ORDINAL)
@@ -17,5 +18,5 @@ public class Payment extends BaseModel{
 
     @Enumerated(EnumType.ORDINAL)
     private PaymentType paymentType;
-    private int refNo;
 }
+

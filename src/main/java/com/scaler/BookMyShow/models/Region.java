@@ -9,10 +9,10 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity // in this case it will take class name as tableName, else we can do @Entity(name = "Region")
+@Entity // in this case it will take className as tableName, else we can do @Entity(name = "tableName")
 public class Region extends BaseModel{
-
     private String name;
     @OneToMany
-    private List<Theatre> theatres;
+    private List<Theatre> theatre;
+
 }

@@ -23,4 +23,5 @@ public class BaseModel {
     @LastModifiedDate
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date updatedAt;
+
 }

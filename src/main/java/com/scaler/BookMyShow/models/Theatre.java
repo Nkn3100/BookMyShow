@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -15,5 +16,6 @@ public class Theatre extends BaseModel{
     @ManyToOne
     private Region region;
     @OneToMany
-    private List<Screen> screens;
+    private List<Screen> screen;
+
 }

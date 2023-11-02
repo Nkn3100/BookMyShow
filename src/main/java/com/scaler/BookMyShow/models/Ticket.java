@@ -11,11 +11,12 @@ import java.util.List;
 @Setter
 @Entity
 public class Ticket extends BaseModel{
+
     @Enumerated(EnumType.ORDINAL)
     private BookingStatus bookingStatus;
 
     @ManyToOne
-    private Show show;
+    private MovieShow show;
 
     @OneToMany
     private List<Payment> payments;
@@ -23,8 +24,17 @@ public class Ticket extends BaseModel{
     @ManyToOne
     private User user;
 
-
+    @ManyToMany
     private List<ShowSeat> showSeats;
-    private Date bookedAt;
     private int amount;
+    private Date bookedAt;
 }
+/*
+Suppose ticket 1 bought Seat1
+then ticket1 was cancelled
+then ticket2 bought seat1
+ticket2 was cancelled
+ticket 3 bought seat1
+
+seat1 belongs to 3 tickets,
+ */
